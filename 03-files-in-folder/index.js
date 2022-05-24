@@ -10,7 +10,7 @@ async function showFilesInFolder() {
       if (file.isFile()) {
         stat(path.join(__dirname, 'secret-folder', file.name), (err, stats) => {
           if (err) return console.error(err.message);
-          console.log(`${path.parse(file.name).name} - ${path.extname(file.name)} - ${(stats.size / 1024).toFixed(3)}kb`);
+          console.log(`${path.parse(file.name).name} - ${path.extname(file.name).slice(1)} - ${(stats.size / 1024).toFixed(3)}kb`);
         });
       }
     }
